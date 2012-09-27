@@ -1,0 +1,384 @@
+/*  meyerweb.com/eric/tools/css/reset  |  v1.0  */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body {line-height:1;}
+ol,ul {list-style:none;}
+/*  Fix for scrollbar disappearing in browser  */
+html {overflow-y:scroll;}
+
+@font-face {
+	font-family: 'GloblMe';
+	src: url('../font/globlme.eot');
+	src: url('../font/globlme.eot?#iefix') format('embedded-opentype'),
+		url('../font/globlme.svg') format('svg'),
+		url('../font/globlme.svg#GloblMe') format('svg'),
+		url('../font/globlme.woff') format('woff'),
+		url('../font/globlme.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icons {
+	font-family: 'GloblMe';
+	font-weight: lighter!important;
+	vertical-align: baseline;
+	text-shadow: 1px 2px 0px #000;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+
+.browser {
+	display: inline;
+}
+
+.mobile {
+	display: none;
+}
+
+body {
+	background: url(../images/body-bg.png);
+	color: #333333;
+	font: normal 12px Georgia, Helvetica, sans-serif;
+	text-shadow: 0 1px 0 #FFFFFF;
+	letter-spacing: .05em;
+}
+
+a {
+	color: #A3C401;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: #6F9B01;
+	text-decoration: underline;
+}
+
+
+/*-------- structure --------*/
+
+#header-wrap {
+	overflow: hidden;
+	background: #222222 url(../images/header-bg.png) repeat-x;
+	min-width: 980px;
+	border-bottom: 1px solid #000000;
+}
+
+#header {
+	width: 940px;
+	margin: 0 auto;
+}
+
+#headline-wrap {
+	overflow: hidden;
+	min-width: 980px;
+}
+
+#headline-bg-wrap {
+	overflow: hidden;
+	background: #333333 url(../images/headline-bg.png) top center no-repeat;
+	height: 140px;
+	min-width: 980px;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+#headline-bg {
+	width: 940px;
+	margin: 0 auto;
+}
+
+#headline {
+	width: 940px;
+	margin: 0 auto;
+	position: relative;
+	min-height: 240px;
+}
+
+#feature-wrap {
+	background: #DDDDDD;
+	padding: 30px 0;
+	min-width: 980px;
+	min-height: 220px;
+	border-top: 1px solid #FFFFFF;
+	border-bottom: 1px solid #999999;
+}
+
+#feature {
+	width: 940px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#content-wrap {
+	overflow: hidden;
+	min-width: 980px;
+	border-bottom: 1px solid #000000;
+}
+
+#content {
+	width: 940px;
+	margin: 0 auto;
+	background: url(../images/content-bg.png) no-repeat;
+	min-height: 920px;
+}
+
+#footer-wrap {
+	min-width: 980px;
+	background: #333333;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMzMzMzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxNTE1MTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #333333 0%, #151515 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#151515));
+	background: -webkit-linear-gradient(top,  #333333 0%,#151515 100%);
+	background: -o-linear-gradient(top,  #333333 0%,#151515 100%);
+	background: -ms-linear-gradient(top,  #333333 0%,#151515 100%);
+	background: linear-gradient(to bottom,  #333333 0%,#151515 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#151515',GradientType=0 );
+	min-height: 240px;
+	border-top: 1px solid #222222;
+}
+
+#footer {
+	width: 940px;
+	margin: 0 auto;
+}
+
+
+/*-------- header --------*/
+
+
+#logo {
+	width: 170px;
+	float: left;
+	margin: 5px 0 0 0;
+}
+
+h1 a {
+	height: 40px;
+	display: block;
+	text-indent: -9999px;
+	background: url(../images/logo.png) no-repeat;
+}
+
+#nav {
+	float: left;
+	margin: 6px 0 0 62px;
+}
+
+#nav li {
+	float: left;
+	font: normal 18px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin: 0 3px;
+}
+
+#nav li a {
+	display: block;
+	padding: 5px 15px 7px 15px;
+	color: #999999;
+	background: #333333;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #000000;
+	outline: none;
+	border: 1px solid #191919;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow: inset 0px 1px 1px rgba(255,255,255,.7), inset 0px -1px 1px rgba(0,0,0,1);
+	-webkit-box-shadow: inset 0px 1px 1px rgba(255,255,255,.7), inset 0px -1px 1px rgba(0,0,0,1);
+	box-shadow: inset 0px 1px 1px rgba(255,255,255,.7), inset 0px -1px 1px rgba(0,0,0,1);
+}
+
+#nav li a:hover {
+	color: #FFFFFF;
+	text-shadow: 0 2px 0 #000000;
+}
+
+#nav li a.active {
+	display: block;
+	padding: 5px 15px 7px 15px;
+	color: #A3C401;
+	background: #262626;
+	text-decoration: none;
+	text-shadow: 0 1px 2px #000000;
+	outline: none;
+	border: 1px solid #191919;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow: inset 0px 0px 20px rgba(0,0,0,.5), inset 0px -1px 1px rgba(255,255,255,.7), inset 0px 1px 1px rgba(0,0,0,.5);
+	-webkit-box-shadow: inset 0px 0px 20px rgba(0,0,0,.5), inset 0px -1px 1px rgba(255,255,255,.7), inset 0px 1px 1px rgba(0,0,0,.5);
+	box-shadow: inset 0px 0px 20px rgba(0,0,0,.5), inset 0px -1px 1px rgba(255,255,255,.7), inset 0px 1px 1px rgba(0,0,0,.5);
+}
+
+#social {
+	float: right;
+}
+
+#social li {
+	float: left;
+	width: 40px;
+	padding: 5px 0 0 0;
+}
+
+#social .icons {
+	font-size: 40px;
+	color: #151515;
+	text-shadow: 0 1px 0 #999999;
+}
+
+#social .icons:hover {
+	text-decoration: none;
+	color: #AAAAAA;
+	text-shadow: 0 2px 1px #000000;
+}
+
+#social .facebook {
+	font-size: 35px;
+}
+
+#appstore-small {
+	position: relative;
+	z-index: 1;
+	left: 350px;
+	top: 32px;
+}
+
+#iphone {
+	position: absolute;
+	z-index: 2;
+	top: -128px;
+	left: 35px;
+	overflow: hidden;
+}
+
+h2 {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-size: 40px;
+	line-height: 40px;
+	color: #222222;
+	text-shadow: 0 2px 0 #FFFFFF;
+	padding: 30px 120px 0 350px;
+}
+
+#headline p {
+	font-size: 16px;
+	line-height: 20px;
+	color: #333333;
+	padding: 13px 60px 0 350px;
+}
+
+#headline-icons {
+	padding: 10px 0 0 350px;
+}
+
+#feature-ribbon {
+	position: absolute;
+	z-index: 2;
+	top: -45px;
+	left: 786px;
+}
+
+#latest-contests {
+	float: left;
+}
+
+#press-kit {
+	float: left;
+	margin: 0 0 0 20px;
+}
+
+#download-now {
+	float: left;
+	margin: 0 0 0 20px;
+}
+
+#adventure {
+	padding: 140px 0 0 0;
+}
+
+#follow {
+	padding: 140px 0 0 0;
+}
+
+#explore {
+	padding: 140px 0 0 0;
+}
+
+h3.left {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-size: 40px;
+	line-height: 40px;
+	color: #222222;
+	text-shadow: 0 2px 0 #FFFFFF;
+	text-align: right;
+	padding: 0 350px 0 0;
+}
+
+h3.right {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-size: 40px;
+	line-height: 40px;
+	color: #222222;
+	text-shadow: 0 2px 0 #FFFFFF;
+	padding: 0 0 0 350px;
+}
+
+#content p.left {
+	font-size: 16px;
+	line-height: 20px;
+	color: #333333;
+	text-align: right;
+	padding: 20px 350px 0 0;
+}
+
+#content p.right {
+	font-size: 16px;
+	line-height: 20px;
+	color: #333333;
+	padding: 20px 0 0 350px;
+}
+
+#appstore-large {
+	position: relative;
+	z-index: 1;
+	top: -60px;
+	left: 320px;
+	margin: 0 auto;
+}
+
+#legal {
+	font: normal 12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-align: center;
+	text-shadow: none;
+	color: #666666;
+}
+
+
+
+
+/* iPad [mobile social media] */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+.browser {display:none;}
+.mobile {display:inline;}
+
+}
+
+/* iPad [portrait] */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+.browser {display:none;}
+.mobile {display:block;}
+
+}
+
+/* iPhone [portrait & landscape] */
+@media only screen and (max-device-width: 480px) {
+.browser {display:none;}
+.mobile {display:inline;}
+
+#header-wrap, #headline-wrap, #headline-bg-wrap, #feature-wrap, #content-wrap, #footer-wrap {min-width: 640px;}
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (-moz-min-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2) {
+           h1 a {background:url(../images/logo@2x.png) no-repeat; background-size:100%;}
+}

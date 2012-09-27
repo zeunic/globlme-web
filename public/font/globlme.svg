@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata></metadata>
+<defs>
+<font id="GloblMeRegular" horiz-adv-x="358" >
+<font-face units-per-em="512" ascent="384" descent="-128" />
+<missing-glyph horiz-adv-x="500" />
+<glyph d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+<glyph d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+<glyph unicode="e" d="M228 173l130 117v-207zM0 290l131 -117l-131 -90v207zM179 129l31 28l148 -88h-358l148 88zM348 290l-169 -126l-168 126h337z" />
+<glyph unicode="f" d="M221 290q-5 0 -9.5 -5.5t-4.5 -15.5v-35h68v-68h-68v-166h-69v166h-55v68h55v35q0 18 6.5 34.5t18 29t26.5 19t32 6.5h54v-68h-54v0z" />
+<glyph unicode="t" d="M0 124q9 -8 23.5 -15t32.5 -8.5t38 5t38 24.5q-14 -2 -21 6q-8 8 -3 15q2 3 5 5.5t6 4.5q-12 -2 -22 2q-7 4 -12.5 8t-7.5 11q4 5 9.5 8t14.5 1q-9 3 -17 7.5t-14 9.5q-6 6 -7.5 10.5t-2.5 8.5q6 2 11 3t11 0q-13 7 -19 15.5t-9 19.5q-2 5 -1 11q26 -10 45.5 -18.5 t33.5 -16t23.5 -14.5t16.5 -13q3 8 8 20t12 24.5t16 24t19 17.5q1 -4 -3 -8q6 3 12 7.5t14 4.5q-3 -9 -12 -13q13 5 23 7q6 1 6 -2t-3 -6q-7 -4 -13 -5.5t-13 -3.5q20 -1 36 -10.5t29 -30.5q9 -14 11 -28q16 -5 34 -2q3 1 4.5 1t4.5 1q-4 -5 -7.5 -8.5t-9.5 -5.5t-11 -3.5 t-11 -1.5q9 -4 19.5 -4.5t20.5 0.5q-13 -12 -23 -14t-20 -2q-4 -18 -14 -36t-28 -35q-25 -22 -51 -32.5t-53 -13.5q-26 -3 -50.5 -0.5t-52.5 15.5q-40 19 -66 53z" />
+<glyph unicode="&#xe000;" horiz-adv-x="256" d="M0 0v0v0v0v0z" />
+</font>
+</defs></svg> 

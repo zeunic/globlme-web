@@ -1,0 +1,442 @@
+/*  meyerweb.com/eric/tools/css/reset  |  v1.0  */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body {line-height:1;}
+ol,ul {list-style:none;}
+/*  Fix for scrollbar disappearing in browser  */
+html {overflow-y:scroll;}
+
+@font-face {
+	font-family: 'GloblMe';
+	src: url('../font/globlme.eot');
+	src: url('../font/globlme.eot?#iefix') format('embedded-opentype'),
+		url('../font/globlme.svg') format('svg'),
+		url('../font/globlme.svg#GloblMe') format('svg'),
+		url('../font/globlme.woff') format('woff'),
+		url('../font/globlme.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icons {
+	font-family: 'GloblMe';
+	font-weight: lighter!important;
+	vertical-align: baseline;
+	text-shadow: 1px 2px 0px #000;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+
+.browser {
+	display: inline;
+}
+
+.mobile {
+	display: none;
+}
+
+body {
+	background: url(../images/body-bg.png);
+	color: #333333;
+	font: normal 12px Georgia, Helvetica, sans-serif;
+	text-shadow: 0 1px 0 #FFFFFF;
+	letter-spacing: .05em;
+	-webkit-overflow-scrolling: touch; /* adds scrolling and bouncing to ios overflow scroll */
+	padding: 0 0 40px 0;
+}
+
+a {
+	color: #A3C401;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: #6F9B01;
+	text-decoration: underline;
+}
+
+
+/*-------- structure --------*/
+#header-wrap {
+	overflow: hidden;
+	background: #222222 url(../images/header-bg.png) repeat-x;
+	min-width: 980px;
+}
+
+#header {
+	width: 940px;
+	margin: 0 auto;
+}
+
+
+/*-------- header --------*/
+#logo {
+	width: 170px;
+	float: left;
+	margin: 5px 0 0 0;
+}
+
+h1 a {
+	height: 40px;
+	display: block;
+	text-indent: -9999px;
+	background: url(../images/logo.png) no-repeat;
+}
+
+#social {
+	float: right;
+}
+
+#social li {
+	float: left;
+	width: 40px;
+	padding: 5px 0 0 0;
+}
+
+#social .icons {
+	font-size: 40px;
+	color: #151515;
+	text-shadow: 0 1px 0 #999999;
+}
+
+#social .icons:hover {
+	text-decoration: none;
+	color: #AAAAAA;
+	text-shadow: 0 2px 1px #000000;
+}
+
+#social .facebook {
+	font-size: 35px;
+}
+
+
+/*-------- main --------*/
+#main-wrap {
+	overflow: hidden;
+	min-width: 980px;
+}
+
+#main {
+	width: 780px;
+	margin: 0 auto;
+}
+
+#image-wrap {
+	width: 478px;
+	float: left;
+}
+
+#comment-wrap {
+	width: 302px;
+	float: right;
+}
+
+/*-------- main-moment --------*/
+#main-moment {
+	width: 462px;
+	margin: 20px 0 0 0;
+	position: relative;
+}
+
+#main-moment img {
+	border: 1px solid #999999;
+	height: 460px;
+	width: 460px;
+}
+
+#main-moment-adventure-title {
+	background-color: #000000;
+	background-color: rgba(0,0,0,0.5);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#00000000);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#00000000)";
+	padding: 20px;
+	margin: 1px;
+	width: 420px;
+	position: absolute;
+	top: 0;
+	overflow: hidden;
+}
+
+h3 {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-size: 20px;
+	color: #FFFFFF;
+	text-shadow: 0 1px 1px #000000;
+}
+
+#main-moment-adventure-title p {
+	font: normal 12px Georgia, Helvetica, sans-serif;
+	font-style: italic;
+	color: #AAAAAA;
+	text-shadow: 0 1px 1px #000000;
+}
+
+
+/*-------- main-adventure --------*/
+#main-adventure {
+	width: 477px;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #999999;
+	background: #EEEEEE;
+	margin: 20px 0 0 0;
+	overflow: hidden;
+	position: relative;
+}
+
+#main-adventure-creator {
+	float: left;
+	margin: 10px;
+	height: 80px;
+	width: 80px;
+	border: 1px solid #999999;
+}
+
+h4 {
+	display: block-inline;
+	float: left;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-size: 20px;
+	color: #222222;
+	margin: 6px 0 0 0;
+}
+
+#main-adventure p {
+	display: block-inline;
+	float: left;
+	font: normal 11px Georgia, Helvetica, sans-serif;
+	font-style: italic;
+	color: #999999;
+	text-shadow: 0 1px 0 #FFFFFF;
+	margin: 13px 0 0 10px;
+}
+
+#main-adventure-members {
+	padding: 10px 3px 10px 10px;
+	margin: 8px 0 0 0;
+	background: #CCCCCC;
+	border-top: 1px solid #999999;
+	border-left: 1px solid #999999;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#main-adventure-members img {
+	float: left;
+	display: block;
+	height: 40px;
+	width: 40px;
+	margin: 0 10px;
+	outline: 1px solid #999999;
+}
+
+
+/*-------- main-moment-author --------*/
+#main-moment-author-wrap {
+	width: 302px;
+	margin: 10px 0 10px 0;
+	overflow: hidden;
+}
+
+#main-moment-author-image {
+	float: left;
+	padding: 4px;
+	height: 90px;
+	width: 90px;
+	border: 1px solid #666666;
+	background: #EEEEEE;
+}
+
+#main-moment-author {
+	float: right;
+	width: 201px;
+	height: 60px;
+	background: #FFFFFF;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	margin: 25px 0 0 0;
+}
+
+h2 {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-size: 20px;
+	color: #222222;
+	margin: 6px 0 0 8px;
+}
+
+#main-moment-author p {
+	font: normal 10px Georgia, Helvetica, sans-serif;
+	font-style: italic;
+	color: #999999;
+	margin: 2px 0 10px 8px;
+}
+
+
+/*-------- main-stats --------*/
+#main-stats {
+	clear: both;
+	width: 300px;
+	border: 1px solid #999999;
+	background: #eeeeee;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjY2NjY2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #eeeeee 0%, #cccccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc));
+	background: -webkit-linear-gradient(top,  #eeeeee 0%,#cccccc 100%);
+	background: -o-linear-gradient(top,  #eeeeee 0%,#cccccc 100%);
+	background: -ms-linear-gradient(top,  #eeeeee 0%,#cccccc 100%);
+	background: linear-gradient(to bottom,  #eeeeee 0%,#cccccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 );
+	margin: 0 0 0 0;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	color: #666666;
+	overflow: hidden;
+}
+
+#main-stats-likes {
+	display: inline-block;
+	min-height: 30px;
+	margin: 12px 15px 12px 15px;
+	background: url(../images/likes.png) no-repeat;
+	padding: 0 0 0 40px;
+	line-height: 115%;
+}
+
+#main-stats-comments {
+	display: inline-block;
+	min-height: 26px;
+	margin: 12px 15px 12px 15px;
+	background: url(../images/comments.png) no-repeat;
+	padding: 0 0 0 46px;
+	line-height: 115%;
+}
+
+
+/*-------- main-comments --------*/
+#main-comments {
+	width: 300px;
+	min-height: 400px;
+	max-height: 400px;
+	font: normal 11px Georgia, Helvetica, sans-serif;
+	color: #999999;
+	text-shadow: 0 1px 1px #FFFFFF;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #999999;
+	background: #EEEEEE;
+	overflow-y: scroll;
+	padding: 20px 0;
+}
+
+.main-comments-box {
+	margin: 0 10px;
+	overflow: hidden;
+}
+
+.main-comments-user {
+	float: left;
+	margin: 0 0 0 0;
+	height: 40px;
+	width: 40px;
+}
+
+.main-comments-username {
+	float: left;
+	margin: 0 0 0 10px;
+	position: relative;
+	top: -3px;
+}
+
+.main-comments-time {
+	float: right;
+	margin: 0 0 0 0;
+	position: relative;
+	top: -3px;
+}
+
+.main-comments-comment {
+	float: left;
+	margin: 0 0 0 50px;
+	font: normal 13px Georgia, Helvetica, sans-serif;
+	color: #333333;
+	text-shadow: 0 1px 1px #FFFFFF;
+	position: relative;
+	top: -25px;
+}
+
+
+
+
+/* iPad [mobile social media] */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+.browser {display: none;}
+.mobile {display: inline;}
+}
+
+/* iPad [portrait] */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+.browser {display:none;}
+.mobile {display:inline;}
+
+#header-wrap {min-width:768px;}
+#header {width:720px;}
+
+/*-------- main --------*/
+#main-wrap {min-width:768px;}
+#main {width:720px;}
+#image-wrap {width:418px;}
+#comment-wrap {width:302px;}
+
+/*-------- main-moment --------*/
+#main-moment {width:402px;}
+#main-moment img {height:400px; width:400px;}
+#main-moment-adventure-title {width:360px;}
+
+}
+
+/* iPhone [portrait & landscape] */
+@media only screen and (max-device-width: 480px) {
+.browser {display:none;}
+.mobile {display:inline;}
+
+#header-wrap {min-width:320px;}
+#header {width:302px;}
+
+/*-------- main --------*/
+#main-wrap {min-width:320px;}
+#main {width:302px;}
+#image-wrap {width:302px; float:none;}
+#comment-wrap {width:302px; float:none;}
+
+/*-------- main-moment --------*/
+#main-moment {width:302px;}
+#main-moment img {height:300px; width:300px;}
+#main-moment-adventure-title {display:none;}
+h3 {display:none;}
+#main-moment-adventure-title p {display:none;}
+
+/*-------- main-adventure --------*/
+#main-adventure {display:none;}
+#main-adventure-creator {display:none;}
+h4 {display:none;}
+#main-adventure p {display:none;}
+#main-adventure-members {display:none;}
+#main-adventure-members img {display:none;}
+
+/*-------- main-comments --------*/
+#main-comments {min-height:none; max-height:none;}
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (-moz-min-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2) {
+           h1 a {background:url(../images/logo@2x.png) no-repeat; background-size:100%;}
+		   #main-stats-likes {background:url(../images/likes@2x.png) no-repeat; background-size:25%;}
+		   #main-stats-comments {background:url(../images/comments@2x.png) no-repeat; background-size:40%;}
+}
