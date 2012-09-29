@@ -29,7 +29,6 @@ app.configure('development', function(){
 app.param(':adventureID', function(req, res, next, adventureID){
 	req.adventureID = adventureID.substring(2, adventureID.length-3);
 
-	console.log('app param first?');
 	console.log(adventureID);
 	console.log(req.adventureID);
 
