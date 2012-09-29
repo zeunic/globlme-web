@@ -17,10 +17,17 @@ append body
 
 				if(result.status == 'success') {
 					adventureData = result.data;
+				} else {
+					adventureData = false;
 				};
 
 				function AdventureViewModel() {
 					var that = this;
+
+					// have any adventureData at all
+					this.haveAdventure = ko.computed(function(){
+						return (adventureData) ? true : false;
+					},this);
 
 					// adventure info
 					this.adventureTitle = ko.observable(adventureData.title);
@@ -112,8 +119,6 @@ append body
 							var curIdx = that.adventureMoments.indexOf( that.currentMoment() ),
 								totalMoments = that.adventureMoments().length;
 
-							console.log(curIdx, totalMoments);
-
 							return (curIdx + 1 < totalMoments);
 						},
 						write: function(viewModel, event){
@@ -135,14 +140,15 @@ append body
 						owner: this
 					});
 
-					setTimeout(function(){
-						that.currentMoment(that.adventureMoments()[1]);
-						that.currentMomentComments(that.adventureMoments()[1].comments);
-					}, 2000);
-
 				}
 
-				ko.applyBindings(new AdventureViewModel());
+				if(result.status == 'success') {
+					ko.applyBindings(new AdventureViewModel());
+				} else {
+					ko.applyBindings({
+						haveAdventure : ko.observable(false)
+					});
+				}
 				
 			}());
 		});

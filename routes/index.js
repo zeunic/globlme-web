@@ -11,7 +11,7 @@ exports.index = function(req, res){
 };
 
 exports.adventure = function(req,res){
-	var requestData = {
+	var results, requestData = {
 			key: "globlme",
 			auth: '',
 			data: {
@@ -29,8 +29,12 @@ exports.adventure = function(req,res){
 		json: requestData
 	};
 
-	request(requestOptions, function(err, response, result){
-		res.render('index', { title: 'Adventure: ' + result.data.title, data: JSON.stringify(result) });
-	});
+	if(req.adventureID) {
+		request(requestOptions, function(err, response, result){
+			res.render('index', { title: 'Adventure: ' + result.data.title, data: JSON.stringify(result) });
+		});
+	} else {
+		res.render('index', { title: 'Error', data: false });
+	}
 	
 };

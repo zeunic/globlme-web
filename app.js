@@ -29,14 +29,12 @@ app.configure('development', function(){
 app.param(':adventureID', function(req, res, next, adventureID){
 	req.adventureID = adventureID.substring(2, adventureID.length-3);
 
-	console.log(adventureID);
-	console.log(req.adventureID);
-
-	if(req.adventureID) {
+	if(req.adventureID && typeof req.adventureID === 'string' && req.adventureID.length > 1) {
 		next();
 	} else {
 		// to do need error page
-		console.log('render error page');
+		req.adventureID = false;
+		next();
 	}
 });
 
