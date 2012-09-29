@@ -1,5 +1,148 @@
-extends layout
+include head
 
-block content
-  h1= title
-  p Welcome to #{title}
+append head
+	script(src="/javascripts/ko.js", type="text/javascript")
+	script(src="/javascripts/jq.js", type="text/javascript")
+	script(src="/javascripts/moment.min.js", type="text/javascript")
+
+body
+	include ../public/adventure.html
+
+append body
+	script(type="text/javascript").
+		$(document).ready(function(){
+			(function(){
+				var result = !{data},
+					adventureData;
+
+				if(result.status == 'success') {
+					adventureData = result.data;
+				};
+
+				function AdventureViewModel() {
+					var that = this;
+
+					// adventure info
+					this.adventureTitle = ko.observable(adventureData.title);
+					this.adventureMeta = ko.computed(function(){
+						return "Adventure created on" + ' (date) - ' + adventureData.followers.length + " follower(s)";
+					}, this);
+
+					// adventure creator
+					this.adventureCreatorName = ko.observable(adventureData.creator.username);
+					this.adventureCreatorAvatar = ko.computed(function(){
+						return adventureData.creator.photo + '_80.jpg';
+					}, this);
+
+					// adventure members
+					var i, j, adventureMembers = [];
+					if(adventureData.members.length > 5) {
+						j = 5;
+					} else {
+						j = adventureData.members.length;
+					}
+
+					for(i=0, j; i<j; i++) {
+						adventureMembers.push(adventureData.members[i]);
+					}
+
+					this.adventureMembers = ko.observableArray(adventureMembers);
+
+					// adventure moments
+					if(adventureData.moments.data.length) {
+						var adventureMoments = [];
+						j = adventureData.moments.data.length;
+						for(i=0, j; i<j; i++) {
+							adventureMoments.push(adventureData.moments.data[i]);
+						}
+					}
+
+					this.adventureMoments = ko.observableArray(adventureMoments);
+
+					// current moments
+
+					this.currentMoment = ko.observable(this.adventureMoments()[0]);
+					this.currentTotalLikes = ko.computed(function(){
+						var i, j, totalLikes = 0,
+							currentMoment = that.currentMoment();
+
+						for(i=0, j=currentMoment.likes.length; i<j; i++) {
+							totalLikes += currentMoment.likes[i].like.value;
+						}
+
+						return '+' + totalLikes;
+					}, this);
+
+					this.currentTotalComments = ko.computed(function(){
+						var currentMoment = that.currentMoment();
+						return currentMoment.comments.length;
+					}, this);
+
+					this.currentMomentComments = ko.observableArray(that.currentMoment().comments);
+
+
+					this.prev = ko.computed({
+						read: function(){
+							var curIdx = that.adventureMoments.indexOf( that.currentMoment() ),
+								totalMoments = that.adventureMoments.length;
+
+							return (curIdx - 1 >= 0);
+						},
+						write: function(viewModel, event){
+							var curIdx = that.adventureMoments.indexOf( that.currentMoment() ),
+								totalMoments = that.adventureMoments().length;
+
+							var prevIdx = curIdx;
+
+							if(curIdx - 1 < 0) {
+								prevIdx = totalMoments;
+							} else {
+								prevIdx -= 1;
+							}
+
+							that.currentMoment(that.adventureMoments()[prevIdx]);
+							that.currentMomentComments(that.adventureMoments()[prevIdx].comments);
+
+						},
+						owner: this
+					});
+
+					this.next = ko.computed({
+						read: function(){
+							var curIdx = that.adventureMoments.indexOf( that.currentMoment() ),
+								totalMoments = that.adventureMoments().length;
+
+							console.log(curIdx, totalMoments);
+
+							return (curIdx + 1 < totalMoments);
+						},
+						write: function(viewModel, event){
+							var curIdx = that.adventureMoments.indexOf( that.currentMoment() ),
+								totalMoments = that.adventureMoments().length;
+
+							var nextIdx = curIdx;
+
+							if(curIdx + 1 > totalMoments) {
+								nextIdx = 0;
+							} else {
+								nextIdx += 1;
+							}
+
+							that.currentMoment(that.adventureMoments()[nextIdx]);
+							that.currentMomentComments(that.adventureMoments()[nextIdx].comments);
+
+						},
+						owner: this
+					});
+
+					setTimeout(function(){
+						that.currentMoment(that.adventureMoments()[1]);
+						that.currentMomentComments(that.adventureMoments()[1].comments);
+					}, 2000);
+
+				}
+
+				ko.applyBindings(new AdventureViewModel());
+				
+			}());
+		});

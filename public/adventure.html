@@ -14,7 +14,7 @@
 <meta property="og:description" content="A mobile application that lets you browse, interact and share rich media with the world." />
 <meta property="og:site_name" content="www.globl.me" />
 
-<link rel="stylesheet" href="css/adventure.css" media="all" />
+<link rel="stylesheet" href="/css/adventure.css" media="all" />
 <link rel="shortcut icon" href="http://www.globl.me/favicon.ico">
 <link rel="apple-touch-icon" href="http://www.globl.me/images/og.jpg">
 
@@ -39,7 +39,7 @@
 <div id="header">
 
 <div id="logo">
-<h1><a href="index.html" title="globl.me">globl.me</a></h1>
+<h1><a href="/" title="globl.me">globl.me</a></h1>
 </div>
 
 <ul id="social">
@@ -56,26 +56,23 @@
 <div id="main-wrap">
 <div id="main">
 
+<a href="#" id="prev" data-bind="click: prev, visible: prev">Prev</a>
+<a href="#" id="prev" data-bind="click: next, visible: next">Next</a>
 
 <div id="image-wrap">
 	<div id="main-moment">
-		<img src="images/main-moment.jpg" />
+		<img data-bind="attr: { src: currentMoment().imageUrl + '_480.jpg' }" src="" />
 		<div id="main-moment-adventure-title">
-			<h3>Rolling In The Deep... Meadows</h3>
-			<p>Adventure created on January 5th, 2012 - 12,781 followers</p>
+			<h3 data-bind="text: adventureTitle()"></h3>
+			<p data-bind="text: adventureMeta()"></p>
 		</div>
 	</div>
 	<div id="main-adventure">
-		<img id="main-adventure-creator" src="images/main-adventure-creator.jpg" title="@RobShwartz" />
-		<h4>@RobShwartz</h4>
+		<img data-bind="attr: { src: adventureCreatorAvatar, title: '@' + adventureCreatorName() }" id="main-adventure-creator" src="" title="" />
+		<h4 data-bind="text: adventureCreatorName()"></h4>
 		<p>created this adventure</p>
-		<div id="main-adventure-members">
-			<img src="images/main-adventure-member1.jpg" title="@member1" />
-			<img src="images/main-adventure-member2.jpg" title="@member2" />
-			<img src="images/main-adventure-member3.jpg" title="@member3" />
-			<img src="images/main-adventure-member4.jpg" title="@member4" />
-			<img src="images/main-adventure-member5.jpg" title="@member5" />
-			<img src="images/main-adventure-member6.jpg" title="@member6" />
+		<div id="main-adventure-members" data-bind="foreach: adventureMembers">
+			<img data-bind="attr: { src: photo + '_80.jpg', title: username }" src="" title="" />
 		</div>
 	</div>
 </div>
@@ -83,58 +80,22 @@
 
 <div id="comment-wrap">
 	<div id="main-moment-author-wrap">
-		<img id="main-moment-author-image" src="images/main-moment-author.jpg" title="@JonMorris" />
+		<img id="main-moment-author-image" data-bind="attr: { src: currentMoment().creator.photo + '_80.jpg', title: currentMoment().creator.username }" src="" title="" />
 		<div id="main-moment-author">
-			<h2>@JonMorris</h2>
+			<h2 data-bind="text: '@' + currentMoment().creator.username"></h2>
 			<p>added this photo to the adventure</p>
 		</div>
 	</div>
 	<div id="main-stats">
-		<p id="main-stats-likes">+1375</p>
-		<p id="main-stats-comments">176</p>
+		<p id="main-stats-likes" data-bind="text: currentTotalLikes()">+</p>
+		<p id="main-stats-comments" data-bind="text: currentTotalComments()"></p>
 	</div>
-	<div id="main-comments">
+	<div id="main-comments" data-bind="foreach: currentMomentComments()">
 		<div class="main-comments-box">
-			<img class="main-comments-user" src="images/main-comments-user.jpg" />
-			<p class="main-comments-username">@Username</p>
-			<p class="main-comments-time">7 min</p>
-			<p class="main-comments-comment">This is awesome! I've never seen rolling meadows quite like that before, what a beautiful photo :)</p>
-		</div>
-		<div class="main-comments-box">
-			<img class="main-comments-user" src="images/main-comments-user.jpg" />
-			<p class="main-comments-username">@Username</p>
-			<p class="main-comments-time">7 min</p>
-			<p class="main-comments-comment">This is awesome! I've never seen rolling meadows quite like that before, what a beautiful photo :)</p>
-		</div>
-		<div class="main-comments-box">
-			<img class="main-comments-user" src="images/main-comments-user.jpg" />
-			<p class="main-comments-username">@Username</p>
-			<p class="main-comments-time">7 min</p>
-			<p class="main-comments-comment">This is awesome! I've never seen rolling meadows quite like that before, what a beautiful photo :)</p>
-		</div>
-		<div class="main-comments-box">
-			<img class="main-comments-user" src="images/main-comments-user.jpg" />
-			<p class="main-comments-username">@Username</p>
-			<p class="main-comments-time">7 min</p>
-			<p class="main-comments-comment">This is awesome! I've never seen rolling meadows quite like that before, what a beautiful photo :)</p>
-		</div>
-		<div class="main-comments-box">
-			<img class="main-comments-user" src="images/main-comments-user.jpg" />
-			<p class="main-comments-username">@Username</p>
-			<p class="main-comments-time">7 min</p>
-			<p class="main-comments-comment">This is awesome! I've never seen rolling meadows quite like that before, what a beautiful photo :)</p>
-		</div>
-		<div class="main-comments-box">
-			<img class="main-comments-user" src="images/main-comments-user.jpg" />
-			<p class="main-comments-username">@Username</p>
-			<p class="main-comments-time">7 min</p>
-			<p class="main-comments-comment">This is awesome! I've never seen rolling meadows quite like that before, what a beautiful photo :)</p>
-		</div>
-		<div class="main-comments-box">
-			<img class="main-comments-user" src="images/main-comments-user.jpg" />
-			<p class="main-comments-username">@Username</p>
-			<p class="main-comments-time">7 min</p>
-			<p class="main-comments-comment">This is awesome! I've never seen rolling meadows quite like that before, what a beautiful photo :)</p>
+			<img class="main-comments-user" src="" data-bind="attr: { src: author.photo+'_80.jpg', title: author.username }" />
+			<p class="main-comments-username" data-bind="text: '@'+author.username"></p>
+			<p class="main-comments-time" data-bind="text: moment(comment.date).fromNow()">(7 min ago)</p>
+			<p class="main-comments-comment" data-bind="text: comment.text"></p>
 		</div>
 	</div>
 </div>

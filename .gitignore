@@ -1,2 +1,4 @@
 .DS_Store
 _template/
+
+sftp-config.json
