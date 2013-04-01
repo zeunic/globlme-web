@@ -103,6 +103,8 @@ a:focus {
 	border-bottom: 1px solid #999999;
 }
 
+
+
 #feature {
 	width: 940px;
 	margin: 0 auto;
@@ -287,6 +289,9 @@ h2 {
 #download-now {
 	float: left;
 	margin: 0 0 0 20px;
+	width: 220px;
+	height: 220px;
+	overflow: hidden;
 }
 
 #adventure {

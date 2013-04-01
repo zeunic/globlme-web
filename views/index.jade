@@ -32,7 +32,7 @@ append body
 					// adventure info
 					this.adventureTitle = ko.observable(adventureData.title);
 					this.adventureMeta = ko.computed(function(){
-						return "Adventure created on" + ' (date) - ' + adventureData.followers.length + " follower(s)";
+						return "Adventure created on " + moment(adventureData.date).format('MMM Do YYYY') + ' - ' + adventureData.followers.length + " follower(s)";
 					}, this);
 
 					// adventure creator

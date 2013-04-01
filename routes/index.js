@@ -24,13 +24,14 @@ exports.adventure = function(req,res){
 	requestData.auth = hash.sha256( JSON.stringify( requestData.data ) + '3912b4f3-c9ab-4e2f-9007-424b5b1d5de6');
 
 	var requestOptions = {
-		uri: 'http://dev.globl.me/v1.1/collection/' + req.adventureID,
+		uri: 'http://api.globl.me/v1.3/collection/' + req.adventureID,
 		method: 'POST',
 		json: requestData
 	};
 
 	if(req.adventureID) {
 		request(requestOptions, function(err, response, result){
+			console.log(result);
 			res.render('index', { title: 'Adventure: ' + result.data.title, data: JSON.stringify(result) });
 		});
 	} else {

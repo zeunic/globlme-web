@@ -43,10 +43,10 @@
 </div>
 
 <ul id="social">
-	<li class="browser"><a href="http://www.twitter.com/globlme" class="icons" title="Follow Globl Me on Twitter">t</a></li>
-	<li class="mobile"><a href="twitter://user?screen_name=globlme" class="icons" title="Follow Globl Me on Twitter">t</a></li>
-	<li class="browser"><a href="http://www.facebook.com/globlme" class="icons facebook" title="Like Globl Me on Facebook">f</a></li>
-	<li class="mobile"><a href="fb://page/249010991855447" class="icons facebook" title="Like Globl Me on Facebook">f</a></li>
+	<li class="browser"><a href="http://www.twitter.com/globlme" class="icons" target="_blank" title="Follow Globl Me on Twitter">t</a></li>
+	<li class="mobile"><a href="twitter://user?screen_name=globlme" class="icons" target="_blank" title="Follow Globl Me on Twitter">t</a></li>
+	<li class="browser"><a href="http://www.facebook.com/globlme" class="icons facebook" target="_blank" title="Like Globl Me on Facebook">f</a></li>
+	<li class="mobile"><a href="fb://page/249010991855447" class="icons facebook" target="_blank" title="Like Globl Me on Facebook">f</a></li>
 </ul>
 
 </div>
@@ -55,11 +55,12 @@
 
 <div id="main-wrap">
 <div id="main" data-bind="visible: haveAdventure()">
-	<a href="#" id="prev" data-bind="click: prev, visible: prev">Prev</a>
-	<a href="#" id="prev" data-bind="click: next, visible: next">Next</a>
+
 
 	<div id="image-wrap">
 		<div id="main-moment">
+			<a href="#" id="prev" data-bind="click: prev, visible: prev">Prev</a>
+			<a href="#" id="next" data-bind="click: next, visible: next">Next</a>
 			<img data-bind="attr: { src: currentMoment().imageUrl + '_480.jpg' }" src="" />
 			<div id="main-moment-adventure-title">
 				<h3 data-bind="text: adventureTitle()"></h3>
@@ -86,8 +87,10 @@
 			</div>
 		</div>
 		<div id="main-stats">
+			<p id="main-stats-likes-icon"></p>
 			<p id="main-stats-likes" data-bind="text: currentTotalLikes()">+</p>
 			<p id="main-stats-comments" data-bind="text: currentTotalComments()"></p>
+			<p id="main-stats-comments-icon"></p>
 		</div>
 		<div id="main-comments" data-bind="foreach: currentMomentComments()">
 			<div class="main-comments-box">
@@ -98,13 +101,20 @@
 			</div>
 		</div>
 	</div>
+
+</div>
 </div>
 
 <div id="error-wrap" data-bind="visible: !haveAdventure()">
-	<h4>Whoops. There was an error.</h4>
-	<p>Our bad. We tried loading in the adventure, and for some reason it didn't work. We're pretty sure this will cause the undue end of the world, but want to <a href="mailto:theteam@globl.me">report it to us</a> just in case it doesn't?</p>
+<div id="error">
+	<div id="message-wrap">
+	<h5>Oops, there was an error :/</h5>
+	<p>Our bad. We tried loading in the adventure and, for some reason, it didn't work. We're pretty sure this will cause the undue end of the world, but can you <a href="mailto:theteam@globl.me">report it to us</a> just in case it doesn't?</p>
+	</div>
+	<div id="download-wrap">
+	<p><a href="/index.html">Go to Homepage</a></p>
+	</div>
 </div>
-
 </div>
 
 

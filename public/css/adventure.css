@@ -120,6 +120,7 @@ h1 a {
 #main {
 	width: 780px;
 	margin: 0 auto;
+	position: relative;
 }
 
 #image-wrap {
@@ -170,6 +171,39 @@ h3 {
 	font-style: italic;
 	color: #AAAAAA;
 	text-shadow: 0 1px 1px #000000;
+}
+
+#prev {
+	height: 120px;
+	width: 40px;
+	display: block;
+	position: absolute;
+	top: 39%;
+	left: 3%;
+	z-index: 100;
+	text-indent: -9999px;
+	background: url(../images/left-arrow.png) no-repeat;
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+
+#next {
+	height: 120px;
+	width: 40px;
+	display: block;
+	position: absolute;
+	top: 39%;
+	right: 3%;
+	z-index: 100;
+	text-indent: -9999px;
+	background: url(../images/right-arrow.png) no-repeat;
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+
+#prev:hover, #next:hover, #prev:focus, #next:focus {
+	opacity:1.0;
+	filter:alpha(opacity=100);
 }
 
 
@@ -297,22 +331,34 @@ h2 {
 	overflow: hidden;
 }
 
-#main-stats-likes {
-	display: inline-block;
-	min-height: 30px;
-	margin: 12px 15px 12px 15px;
+#main-stats-likes-icon {
+	display: block;
+	float: left;
+	height: 30px;
+	width: 30px;
+	margin: 12px 0 12px 24px;
 	background: url(../images/likes.png) no-repeat;
-	padding: 0 0 0 40px;
-	line-height: 115%;
+}
+
+#main-stats-likes {
+	display: block;
+	float: left;
+	margin: 11px 0 0 8px;
+}
+
+#main-stats-comments-icon {
+	display: block;
+	float: right;
+	height: 26px;
+	width: 36px;
+	margin: 15px 8px 12px 0;
+	background: url(../images/comments.png) no-repeat;
 }
 
 #main-stats-comments {
-	display: inline-block;
-	min-height: 26px;
-	margin: 12px 15px 12px 15px;
-	background: url(../images/comments.png) no-repeat;
-	padding: 0 0 0 46px;
-	line-height: 115%;
+	display: block;
+	float: right;
+	margin: 11px 24px 0 0;
 }
 
 
@@ -329,23 +375,37 @@ h2 {
 	border-left: 1px solid #999999;
 	background: #EEEEEE;
 	overflow-y: scroll;
-	padding: 20px 0;
+	padding: 10px 0 20px 0;
 }
 
 .main-comments-box {
 	margin: 0 10px;
+	padding: 10px 0;
 	overflow: hidden;
+	border-top: 1px solid #FFFFFF;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.main-comments-box:first-child {
+	border-top: none;
+}
+
+.main-comments-box:last-child {
+	border-bottom: none;
 }
 
 .main-comments-user {
 	float: left;
-	margin: 0 0 0 0;
+	display: block;
+	position: relative;
+	top: 0;
 	height: 40px;
 	width: 40px;
 }
 
 .main-comments-username {
 	float: left;
+	display: block;
 	margin: 0 0 0 10px;
 	position: relative;
 	top: -3px;
@@ -353,22 +413,68 @@ h2 {
 
 .main-comments-time {
 	float: right;
-	margin: 0 0 0 0;
+	display: block;
 	position: relative;
 	top: -3px;
 }
 
 .main-comments-comment {
-	float: left;
-	margin: 0 0 0 50px;
+	display: block-inline;
+	margin: 15px 0 0 50px;
 	font: normal 13px Georgia, Helvetica, sans-serif;
 	color: #333333;
 	text-shadow: 0 1px 1px #FFFFFF;
 	position: relative;
-	top: -25px;
+	top: 0px;
 }
 
 
+/*-------- error-wrap --------*/
+#error-wrap {
+	overflow: hidden;
+	min-width: 980px;
+}
+
+#error {
+	width: 780px;
+	margin: 0 auto;
+}
+
+h5 {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-size: 20px;
+	color: #222222;
+	text-shadow: 0 1px 1px #FFFFFF;
+}
+
+#error p {
+	font: normal 14px Georgia, Helvetica, sans-serif;
+	color: #333333;
+	text-shadow: 0 1px 1px #FFFFFF;
+}
+
+#error a {
+	color: #333333;
+	text-decoration: underline;
+}
+
+#message-wrap {
+	width: 478px;
+	float: left;
+}
+
+#download-wrap {
+	width: 302px;
+	float: right;
+}
+
+#download-wrap p {
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 26px;
+	display: block;
+	vertical-align: baseline;
+}
 
 
 /* iPad [mobile social media] */
@@ -395,11 +501,19 @@ h2 {
 #main-moment {width:402px;}
 #main-moment img {height:400px; width:400px;}
 #main-moment-adventure-title {width:360px;}
+h3 {font-size:18px;}
+#main-moment-adventure-title p {font-size:11px}
+
+/*-------- error-wrap --------*/
+#error-wrap {min-width:768px;}
+#error {width:720px;}
+#message-wrap {width:418px;}
+#download-wrap {width:302px;}
 
 }
 
 /* iPhone [portrait & landscape] */
-@media only screen and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
 .browser {display:none;}
 .mobile {display:inline;}
 
@@ -418,6 +532,8 @@ h2 {
 #main-moment-adventure-title {display:none;}
 h3 {display:none;}
 #main-moment-adventure-title p {display:none;}
+h3 {font-size:16px;}
+#main-moment-adventure-title p {font-size:10px}
 
 /*-------- main-adventure --------*/
 #main-adventure {display:none;}
@@ -430,6 +546,12 @@ h4 {display:none;}
 /*-------- main-comments --------*/
 #main-comments {min-height:none; max-height:none;}
 
+/*-------- error-wrap --------*/
+#error-wrap {min-width:768px;}
+#error {width:720px;}
+#message-wrap {width:302px; float:none;}
+#download-wrap {width:302px; float:none;}
+
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -437,6 +559,6 @@ h4 {display:none;}
        only screen and (-o-min-device-pixel-ratio: 2/1),
        only screen and (min-device-pixel-ratio: 2) {
            h1 a {background:url(../images/logo@2x.png) no-repeat; background-size:100%;}
-		   #main-stats-likes {background:url(../images/likes@2x.png) no-repeat; background-size:25%;}
-		   #main-stats-comments {background:url(../images/comments@2x.png) no-repeat; background-size:40%;}
+		   #main-stats-likes-icon {background:url(../images/likes@2x.png) no-repeat; background-size:100%;}
+		   #main-stats-comments-icon {background:url(../images/comments@2x.png) no-repeat; background-size:100%;}
 }
